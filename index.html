@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pré-Janeiro Inteligente - Ganhe Vantagem nas Festas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset e estilos base */
+        :root {
+            --primary: #1a6dcc;
+            --primary-dark: #0d4d9c;
+            --secondary: #ff6b00;
+            --secondary-light: #ff8c00;
+            --accent: #4caf50;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --text: #495057;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f5f7fa;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 25px 0;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            line-height: 1.2;
+        }
+        
+        .logo p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 40px 0;
+            text-align: center;
+            background-color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 500px;
+            margin: 0 auto 20px;
+            box-shadow: var(--shadow);
+            transform: rotate(-1deg);
+            transition: var(--transition);
+        }
+        
+        .highlight-box:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+        
+        .highlight-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Sections */
+        section {
+            padding: 40px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--primary);
+        }
+        
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .card ul {
+            list-style-type: none;
+        }
+        
+        .card li {
+            margin-bottom: 8px;
+            padding-left: 22px;
+            position: relative;
+        }
+        
+        .card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Bonus Section */
+        .bonus-section {
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+            position: relative;
+        }
+        
+        .bonus-section::before {
+            content: "🎁";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 3rem;
+            opacity: 0.2;
+        }
+        
+        .bonus-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            border-top: 5px solid var(--secondary);
+        }
+        
+        .bonus-card h3 {
+            color: var(--secondary);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        
+        /* Guarantee Section */
+        .guarantee-section {
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            text-align: center;
+        }
+        
+        .guarantee-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            border: 2px dashed var(--accent);
+            position: relative;
+        }
+        
+        .guarantee-box::before {
+            content: "✓";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .guarantee-box h3 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+        
+        /* CTA Button */
+        .cta-container {
+            text-align: center;
+            padding: 30px 0;
+            background: white;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-light));
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 6px 15px rgba(255, 107, 0, 0.4);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(255, 107, 0, 0.5);
+        }
+        
+        .cta-button::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(30deg);
+            transition: var(--transition);
+        }
+        
+        .cta-button:hover::after {
+            transform: rotate(30deg) translate(20%, 20%);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1.7rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .highlight-box {
+                padding: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.4rem;
+            }
+            
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 1.2rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animações */
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+        
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Elementos orgânicos */
+        .organic-shape {
+            position: absolute;
+            border-radius: 50% 30% 70% 40%;
+            background: rgba(26, 109, 204, 0.1);
+            z-index: -1;
+        }
+        
+        .shape-1 {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: 5%;
+        }
+        
+        .shape-2 {
+            width: 120px;
+            height: 120px;
+            bottom: 20%;
+            right: 10%;
+            background: rgba(255, 107, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Pré - JANEIRO<br>INTELIGENTE</h1>
+                <p>Enquanto outros vão ganhar peso nas festas, você vai ganhar vantagem.</p>
+            </div>
+        </div>
+        <div class="organic-shape shape-1"></div>
+        <div class="organic-shape shape-2"></div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Garanta hoje sua vaga para Janeiro</h2>
+            <p>E já ganhe o <strong>Kit de Sobrevivência das Festas</strong>.</p>
+            
+            <div class="highlight-box floating">
+                <h3>Oferta do Pré-Janeiro</h3>
+                <p><strong>60% do valor agora</strong></p>
+            </div>
+            
+            <h3>Acesso Em Dezembro ao:</h3>
+            <div class="content-grid">
+                <div class="card">
+                    <h3><i class="fas fa-chart-line"></i> MODELO de Hábitos</h3>
+                    <p>Estruture seus hábitos saudáveis com um método comprovado</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-running"></i> Treinos Leves</h3>
+                    <p>Módulo de treinos de 10 a 15 minutos por dia</p>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-suitcase-rolling"></i> Treinos para Viagens</h3>
+                    <p>Exercícios simples para fazer em qualquer lugar</p>
+                </div>
+            </div>
+            
+            <div class="highlight-box" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); margin-top: 20px;">
+                <p><strong>NB:</strong> O programa completo inicia forte em Janeiro</p>
+                <p>Perfeito para quem está viajando ou sem tempo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonus Section -->
+    <section class="bonus-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎁 Bônus Exclusivos de Dezembro</h2>
+            </div>
+            
+            <div class="content-grid">
+                <div class="bonus-card">
+                    <h3>Guia Pessoal</h3>
+                    <p>Como não ganhar peso nas festas? Métodos práticos e eficazes.</p>
+                </div>
+                <div class="bonus-card">
+                    <h3>10 Treinos Curtos</h3>
+                    <p>Para fazer em viagens (praia, rua, parque, quarto de hotel, etc).</p>
+                </div>
+                <div class="bonus-card">
+                    <h3>Lista de Compras Saudável</h3>
+                    <p>Lista pessoal de compras saudáveis para festas.</p>
+                </div>
+                <div class="bonus-card">
+                    <h3>Check-list de Sono</h3>
+                    <p>Como manter a qualidade do sono durante períodos festivos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-box pulse">
+                <h3>Garantia Estendida</h3>
+                <p>"Se até 15 de Janeiro você sentir que não valeu a pena, devolvemos o seu dinheiro."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Para quem serve o Pré-Janeiro?</h2>
+            </div>
+            
+            <div class="content-grid">
+                <div class="card">
+                    <h3><i class="fas fa-check-circle"></i> Para quem quer:</h3>
+                    <ul>
+                        <li>Festejar mais sem prejudicar peso e saúde</li>
+                        <li>Começar certo em Janeiro e não desistir no meio</li>
+                        <li>Tem plano de emagrecer no próximo ano</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3><i class="fas fa-check-circle"></i> Para quem busca:</h3>
+                    <ul>
+                        <li>Cuidar da saúde e prevenir doenças</li>
+                        <li>Ter uma vida saudável e longevidade</li>
+                        <li>Tratar dores sem usar medicamentos</li>
+                        <li>Manter resultados de emagrecimento nas festas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-container">
+        <div class="container">
+            <a href="https://wa.me/258851760874?text=Olá! Gostaria de garantir minha vaga no Pré-Janeiro Inteligente!" class="cta-button" target="_blank">GARANTIR MINHA VAGA AGORA</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Pré-Janeiro Inteligente. Todos os direitos reservados.</p>
+            <p>Este site não faz parte do Facebook ou Facebook Inc. Também não faz parte do Google ou Google LLC.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Adiciona animação de entrada aos elementos
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card, .bonus-card, .highlight-box');
+            
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 200 * index);
+            });
+            
+            // Efeito de digitação no título
+            const title = document.querySelector('.logo h1');
+            const text = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    title.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>
